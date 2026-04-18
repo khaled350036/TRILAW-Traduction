@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRILAW</title>
+    <meta
+      name="description"
+      content="Site de traduction du français vers l'anglais et l'arabe."
+    />
+    <link rel="icon" type="image/x-icon" href="app_icon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-panel">
+        <h1>TRILAW</h1>
+        <p>Français -&gt; Anglais -&gt; Arabe</p>
+      </section>
+      <form class="search-panel" id="searchForm" autocomplete="off">
+        <label class="search-box" for="searchInput">
+          <span class="search-box__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="M10.5 4a6.5 6.5 0 1 0 4.09 11.56l4.42 4.43 1.41-1.42-4.42-4.42A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"
+              />
+            </svg>
+          </span>
+          <input
+            id="searchInput"
+            name="search"
+            type="text"
+            placeholder="Entrez un mot en francais"
+          />
+        </label>
+
+        <button class="search-button" type="submit">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path
+                d="m10.71 5.29-1.42 1.42L12.59 10H4v2h8.59l-3.3 3.29 1.42 1.42L16.41 11l-5.7-5.71Z"
+              />
+            </svg>
+          </span>
+          <span>Rechercher</span>
+        </button>
+      </form>
+
+      <p class="status-message" id="statusMessage" role="status" aria-live="polite"></p>
+
+      <section class="results-stack" aria-label="Résultats de traduction">
+        <article class="result-card result-card--source">
+          <p class="result-card__label">Mettez votre texte</p>
+          <button
+            class="copy-button"
+            type="button"
+            data-copy-target="sourceValue"
+            disabled
+          >
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"
+                />
+              </svg>
+            </span>
+            <span>Copier</span>
+          </button>
+          <p class="result-card__value" id="sourceValue"></p>
+        </article>
+
+        <article class="result-card result-card--english">
+          <p class="result-card__label">Traduction anglais</p>
+          <button
+            class="copy-button"
+            type="button"
+            data-copy-target="englishValue"
+            disabled
+          >
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"
+                />
+              </svg>
+            </span>
+            <span>Copier</span>
+          </button>
+          <p class="result-card__value" id="englishValue"></p>
+        </article>
+
+        <article class="result-card result-card--arabic">
+          <p class="result-card__label">Traduction arabe</p>
+          <button
+            class="copy-button"
+            type="button"
+            data-copy-target="arabicValue"
+            disabled
+          >
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"
+                />
+              </svg>
+            </span>
+            <span>Copier</span>
+          </button>
+          <p class="result-card__value result-card__value--arabic" id="arabicValue"></p>
+        </article>
+
+        <article class="result-card result-card--domain result-card--compact">
+          <p class="result-card__label">Domaine</p>
+          <button
+            class="copy-button"
+            type="button"
+            data-copy-target="domainValue"
+            disabled
+          >
+            <span aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1Zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16h-9V7h9v14Z"
+                />
+              </svg>
+            </span>
+            <span>Copier</span>
+          </button>
+          <p class="result-card__value result-card__value--category" id="domainValue"></p>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="translations-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
